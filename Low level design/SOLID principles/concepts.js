@@ -27,3 +27,25 @@
 // Details: How the tool works
 
 // I ahve a  class that knows where to fit the screws to adjust a tool, the interface have screws to fit but does not know where to fit it, the tool is present to perform action,
+
+
+
+// Class responsible for user data
+class User {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+}
+
+// Class responsible for user-related operations
+class UserService {
+  createUser(name, email) {
+    // Logic to create a user
+    return new User(name, email);
+  }
+}
+
+const userService = new UserService();
+const user = userService.createUser('John Doe', 'john.doe@example.com');
+console.log(user);
