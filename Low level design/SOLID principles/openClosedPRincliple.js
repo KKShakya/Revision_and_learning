@@ -46,3 +46,60 @@ const employees = [
 ];
 
 employees.forEach(employee => console.log(`${employee.name} is a ${employee.getRole()}`));
+
+
+
+
+//  This is our class Discount strategy which will be applied on order total,
+//  based on our discount will make our differnet strategy work
+
+class DiscountStrategy {
+  applyDiscount(order) {
+      throw new Error("This method should be overridden");
+  }
+}
+
+// SeasonalDiscount class implementing DiscountStrategy interface
+class SeasonalDiscount extends DiscountStrategy {
+  applyDiscount(order) {
+    // 10% seasonal discount
+      return order.total * 0.1; 
+  }
+}
+
+// LoyaltyDiscount class implementing DiscountStrategy interface
+class LoyaltyDiscount extends DiscountStrategy {
+  applyDiscount(order) {
+    // 15% loyalty discount
+      return order.total * 0.15; 
+  }
+}
+
+
+
+// Adding a new discount type (PromotionalDiscount) without modifying existing code
+class PromotionalDiscount extends DiscountStrategy {
+  applyDiscount(order) {
+      return order.total * 0.2; // 20% promotional discount
+  }
+}
+
+// a new class just to calcualte the discount price for each strategy
+
+// DiscountCalculator class remains unchanged
+class DiscountCalculator {
+  calculateDiscount(order, discountStrategy) {
+      return discountStrategy.applyDiscount(order);
+  }
+}
+
+const order = { total: 100 };
+
+const seasonalDiscount = new SeasonalDiscount();
+const loyaltyDiscount = new LoyaltyDiscount();
+const promotionalDiscount = new PromotionalDiscount();
+
+const calculator = new DiscountCalculator();
+console.log(calculator.calculateDiscount(order, seasonalDiscount));   // Output: 10
+console.log(calculator.calculateDiscount(order, loyaltyDiscount));    // Output: 15
+console.log(calculator.calculateDiscount(order, promotionalDiscount)); // Output: 20
