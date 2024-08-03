@@ -68,3 +68,38 @@ orderNotifier.notify(order);
 // OrderNotifier Class: Only manages sending notifications to the customer.\
 
 // By separating these responsibilities into different classes, each class has a single responsibility, adhering to the SRP. This makes the system easier to maintain and extend. For example, if the notification logic changes (e.g., switching from email to SMS notifications), you only need to modify the OrderNotifier class without affecting the Order or OrderRepository classes.
+
+class Switchable {
+  turnOn() {
+    throw new Error("This method should be overridden!");
+  }
+  
+  turnOff() {
+    throw new Error("This method should be overridden!");
+  }
+}
+
+class LightBulb extends Switchable {
+  turnOn() {
+    console.log("Light bulb is on!");
+  }
+  
+  turnOff() {
+    console.log("Light bulb is off!");
+  }
+}
+
+class LightSwitch {
+  constructor(device) {
+    this.device = device;
+  }
+
+  operate() {
+    this.device.turnOn();
+  }
+}
+
+// Example usage
+const bulb = new LightBulb();
+const lightSwitch = new LightSwitch(bulb);
+lightSwitch.operate();
