@@ -3,8 +3,8 @@
 // Definition: Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
 // Why It's Important:
-// 🔴 Facilitates Family of Objects: Simplifies the creation of related objects that work together.
-// 🔴 Abstracts Creation Logic: Promotes loose coupling by abstracting the instantiation process.
+//  Facilitates Family of Objects: Simplifies the creation of related objects that work together.
+//  Abstracts Creation Logic: Promotes loose coupling by abstracting the instantiation process.
 
 
 

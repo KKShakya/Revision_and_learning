@@ -3,8 +3,8 @@
 // Definition: Separates the construction of a complex object from its representation, allowing the same construction process to create various representations.
 
 // Why It's Important:
-// 🔴 Simplifies Complex Object Creation: Useful for constructing objects with many parts or options.
-// 🔴 Step-by-Step Construction: Allows for the step-by-step creation of objects, making the process more manageable and readable.
+//  Simplifies Complex Object Creation: Useful for constructing objects with many parts or options.
+//  Step-by-Step Construction: Allows for the step-by-step creation of objects, making the process more manageable and readable.
 
 
 //  Builder Pattern

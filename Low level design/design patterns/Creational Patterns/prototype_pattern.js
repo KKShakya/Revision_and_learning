@@ -3,8 +3,8 @@
 // Definition: Specifies the kinds of objects to create using a prototypical instance and creates new objects by copying this prototype.
 
 // Why It's Important:
-// 🔴 Efficient Object Creation: Reduces the cost of creating objects by cloning existing instances.
-// 🔴 Simplifies Similar Object Creation: Easily creates new objects that are similar to an existing object.
+//  Efficient Object Creation: Reduces the cost of creating objects by cloning existing instances.
+//  Simplifies Similar Object Creation: Easily creates new objects that are similar to an existing object.
 
 
 
